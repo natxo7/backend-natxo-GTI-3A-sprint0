@@ -1,18 +1,19 @@
+
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     require_once 'conexion.php';
     $data = file_get_contents('php://input');
-    echo "AAAAA";
     echo $data;
-    echo "BBBB";
     $jsonData=json_decode($data);
     $Medicion=$jsonData->{'Medicion'};;
+    $Latitud=$jsonData->{'Latitud'};;
+    $Longitud=$jsonData->{'Longitud'};;
     
-    $query="INSERT INTO datosmedidos (Medicion) VALUES('".$Medicion."')";
+    //$query="INSERT INTO tabla (Medicion) VALUES('".$Medicion."')";
+    $query="INSERT INTO datosmedidos(Medicion, Latitud, Longitud) VALUES ('".$Medicion."','".$Latitud."','".$Longitud."')";
 $resultado=$mysql->query($query);
 if($resultado==true){
     echo "Los datos se introducen de forma correcta";
 }else{
     echo "Error al insertar datos";
-}
 }
