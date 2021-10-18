@@ -14,14 +14,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){//comprobamos que tipo de peticion REST e
     $Medicion=$jsonData->{'Medicion'};
     $Longitud=$jsonData->{'Longitud'};
     $Latitud=$jsonData->{'Latitud'};
+    $Major=$jsonData->{'Major'};
+    $Minor=$jsonData->{'Minor'};
     echo "AAAAAAAAAAAAAAAAAAAAAAAAA\n";
     echo $Medicion;
     echo $Longitud;
     echo $Latitud;
+    echo $Major;
+    echo $Minor;
     
     //montamos la consulta con los parametros y la lanzamos
     echo "VAMOS A VER LA CADENA\n";
-    $query="INSERT INTO datosmedidos (Medicion,Longitud,Latitud) VALUES('".$Medicion."','".$Longitud."','".$Latitud."');";
+    $query="INSERT INTO datosmedidos (Medicion,Longitud,Latitud,Major,Minor) VALUES('".$Medicion."','".$Longitud."','".$Latitud."','".$Major."','".$Minor."');";
     $resultado=$mysql->query($query);
     echo "BBBBBBBBBBBBBB\n";
     echo $resultado;

@@ -16,6 +16,8 @@
               <th>Mediciones</th>
               <th>Latitud</th>
               <th>Longitud</th>
+               <th>Minor</th>
+              <th>Major</th>
               
           </tr>
           <?php
@@ -30,6 +32,8 @@
               <td><?php echo $mostrar['Medicion']?></td>
               <td><?php echo $mostrar['Latitud']?></td>
               <td><?php echo $mostrar['Longitud']?></td>
+               <td><?php echo $mostrar['Minor']?></td>
+              <td><?php echo $mostrar['Major']?></td>
           </tr>
           
           <?php
